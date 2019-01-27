@@ -1,6 +1,17 @@
 # -*- coding:utf-8 -*-
 import time
 from selenium import webdriver
+
+driver = webdriver.Chrome("./chromedriver")
+
+driver.get("https://captive-portal/cp/logout")
+time.sleep(1)
+SubmitButton = driver.find_element_by_name("cpSubmit")
+SubmitButton.click()
+
+time.sleep(5)
+driver.close()
+
 #カレントディレクトリにchromedriverがある前提
 driver = webdriver.Chrome("./chromedriver")
 
@@ -33,5 +44,7 @@ SubmitButton = driver.find_element_by_css_selector("#submitButton")
 SubmitButton.click()
 SubmitButton.submit()
 
-time.sleep(20)
+time.sleep(5)
 driver.close()
+
+
